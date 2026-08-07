@@ -282,7 +282,7 @@
         ```
         <body>
         <script>
-        $('body').load('https://cdn.jsdelivr.net/gh/mswchpd-art/ATRI@main/dist/精灵前端/index.html')
+        $('body').load('https://cdn.jsdelivr.net/gh/mswchpd-art/ATRI@main/dist/%E7%B2%BE%E7%81%B5%E5%89%8D%E7%AB%AF/index.html')
         </script>
         </body>
         ```

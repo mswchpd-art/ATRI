@@ -1,0 +1,9 @@
+---
+EJS_NSFW基础尺度控制器:
+  # :<%_ if (typeof hg === 'undefined') var hg = getvar('stat_data.拉亚.好感度', { defaults: 0 }); _%>
+  当前好感度: <%= hg %>
+  # :<%_ if (hg < 50) { _%>
+  <%- await getwi('NSFW_基础尺度') %>
+  # :<%_ } else { _%>
+  <%- await getwi('NSFW_基础尺度_高好感度') %>
+  # :<%_ } _%>
