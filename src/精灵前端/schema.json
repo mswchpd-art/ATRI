@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "拉亚": {
+      "type": "object",
+      "properties": {
+        "精神力": {
+          "default": 60,
+          "type": "number"
+        },
+        "好感度": {
+          "default": 0,
+          "type": "number"
+        },
+        "开发度": {
+          "default": {},
+          "type": "object",
+          "properties": {
+            "小穴": {
+              "default": 0,
+              "type": "number"
+            },
+            "胸部": {
+              "default": 0,
+              "type": "number"
+            },
+            "后穴": {
+              "default": 0,
+              "type": "number"
+            }
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "拉亚"
+  ]
+}
