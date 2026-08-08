@@ -441,6 +441,12 @@ function parse_configuration(entry: Entry): (_env: any, argv: any) => webpack.Co
         { apply: schema_dump },
         { apply: tavern_sync },
         new VueLoaderPlugin(),
+        // vue-loader 的 exportHelper 是 CJS（exports.default=...），outputModule + 单 chunk 内联时会生成
+        // 裸 `__webpack_require__.cjs=` 赋值但无 `__webpack_require__` 定义 → 正则注入加载时 ReferenceError。
+        // 用 ESM 版替换（util/patches/exportHelper.mjs，逻辑等价），消除 CJS 兼容层。
+        new webpack.NormalModuleReplacementPlugin(/vue-loader[\\/]dist[\\/]exportHelper\.js$/, resource => {
+          resource.request = path.join(import.meta.dirname, 'util', 'patches', 'exportHelper.mjs');
+        }),
         unpluginAutoImport({
           dts: true,
           dtsMode: 'overwrite',
