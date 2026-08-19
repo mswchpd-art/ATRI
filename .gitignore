@@ -11,9 +11,12 @@ pnpm-debug.log*
 
 auto-imports.d.ts
 components.d.ts
+<<<<<<< HEAD
 
 # 本地开发临时文件（不进仓库）
 .claude/
 备份_*/
 状态栏调试截图.png
 精灵/新建为src文件夹中的文件夹/
+=======
+>>>>>>> fe7d6686eaa214f144c2a734be2e26ca399f3d3d
